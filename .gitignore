@@ -1,0 +1,12 @@
+
+Library/
+
+obj/
+
+Temp/
+
+Assembly-CSharp-Editor.csproj
+
+Assembly-CSharp.csproj
+
+shader-learn.sln
