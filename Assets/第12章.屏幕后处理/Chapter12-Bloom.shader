@@ -44,6 +44,7 @@
             return o;
         }
 
+        //亮度计算
         fixed luminance(fixed4 color){
             return 0.2125 * color.r + 0.7154 * color.g + 0.0721 * color.b;
         }
@@ -51,6 +52,7 @@
         fixed4 fragExtractBright(v2f i):SV_TARGET
         {
             fixed4 c = tex2D(_MainTex, i.uv);
+            //clamp 取值范围为0,1 
             fixed val = clamp(luminance(c) - _LuminanceThreshold, 0.0, 1.0);
             return fixed4((c * val).rgb, 1.0);
         }
